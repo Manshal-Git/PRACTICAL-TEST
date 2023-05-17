@@ -8,6 +8,8 @@ import com.example.prcaticaltest.databinding.ActivityMainBinding
 import com.example.prcaticaltest.ui.fragment.GalleryFragment
 import com.example.prcaticaltest.ui.fragment.HomeFragment
 import com.example.prcaticaltest.ui.fragment.TodoFragment
+import com.example.prcaticaltest.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private var homeFragment: HomeFragment? = null
     private var galleryFragment: GalleryFragment? = null
     private var todoFragment: TodoFragment? = null
+    private val homeViewModel by viewModel<HomeViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 setOnItemSelectedListener {
                     changeFragment(
                         when (it.itemId) {
-                            R.id.home -> homeFragment ?: HomeFragment.newInstance().apply {
+                            R.id.home -> homeFragment ?: HomeFragment.newInstance(homeViewModel).apply {
                                 homeFragment = this
                             }
                             R.id.gallery -> galleryFragment ?: GalleryFragment.newInstance().apply {
