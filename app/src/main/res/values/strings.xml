@@ -2,5 +2,14 @@
     <string name="app_name">PrcaticalTest</string>
     <string name="home">Home</string>
     <string name="gallery">Gallery</string>
-    <string name="todo">Todo</string>
+    <string name="todo">Todo</string><string name="product_lis">
+Product List
+</string>
+    <string name="product_det">
+Product Detail
+</string>
+    <string name="under_devel">
+Under development
+</string>
+
 </resources>
