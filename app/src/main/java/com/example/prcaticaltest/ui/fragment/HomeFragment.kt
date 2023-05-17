@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.prcaticaltest.R
 import com.example.prcaticaltest.databinding.FragmentHomeBinding
+import com.example.prcaticaltest.viewmodel.HomeViewModel
 
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-
+    private lateinit var vm: HomeViewModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,8 +25,8 @@ class HomeFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() = HomeFragment().apply {
-
+        fun newInstance(homeViewModel: HomeViewModel) = HomeFragment().apply {
+            vm = homeViewModel
         }
     }
 }
