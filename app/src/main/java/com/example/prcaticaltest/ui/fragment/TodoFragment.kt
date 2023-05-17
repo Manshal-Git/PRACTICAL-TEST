@@ -21,8 +21,13 @@ class TodoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding =
-            FragmentTodoBinding.bind(layoutInflater.inflate(R.layout.fragment_home, null, false))
+            FragmentTodoBinding.bind(layoutInflater.inflate(R.layout.fragment_todo, null, false))
         return binding.root
     }
 
+    companion object{
+        fun newInstance() = TodoFragment().apply {
+
+        }
+    }
 }

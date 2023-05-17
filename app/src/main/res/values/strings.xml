@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">PrcaticalTest</string>
+    <string name="home">Home</string>
+    <string name="gallery">Gallery</string>
+    <string name="todo">Todo</string>
 </resources>

@@ -19,8 +19,14 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-       binding = FragmentGalleryBinding.bind(layoutInflater.inflate(R.layout.fragment_home,null,false))
+       binding = FragmentGalleryBinding.bind(layoutInflater.inflate(R.layout.fragment_gallery,null,false))
         return binding.root
     }
 
+
+    companion object{
+        fun newInstance() = GalleryFragment().apply {
+
+        }
+    }
 }

@@ -14,7 +14,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,4 +23,9 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    companion object {
+        fun newInstance() = HomeFragment().apply {
+
+        }
+    }
 }
