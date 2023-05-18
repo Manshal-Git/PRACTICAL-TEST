@@ -18,7 +18,7 @@
 
         <activity android:name=".ui.activity.ProductDetailActivity" android:exported="false"/>
 
-        <activity android:name=".ui.activity.FullPhotoActivity" android:exported="false"/>
+        <activity android:name=".ui.activity.FullPhotoFragment" android:exported="false"/>
 
         <activity android:name=".ui.activity.MainActivity"
             android:exported="true">

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.prcaticaltest.R
 import com.example.prcaticaltest.adapter.PhotosAdapter
 import com.example.prcaticaltest.databinding.FragmentGalleryBinding
+import com.example.prcaticaltest.ui.activity.FullPhotoFragment
 import com.example.prcaticaltest.utils.hide
 import com.example.prcaticaltest.utils.show
 import com.example.prcaticaltest.viewmodel.GalleryViewModel
@@ -43,8 +44,16 @@ class GalleryFragment : Fragment() {
                     binding.tvNoPhotos.hide()
                     binding.rvPhotos.apply {
                         show()
-                        adapter = PhotosAdapter(items) { item ->
-                            // Todo: Display bigger image on a different detail page
+                        adapter = PhotosAdapter(items) { url ->
+                            parentFragmentManager
+                                .beginTransaction()
+                                .addToBackStack(this@GalleryFragment.javaClass.name)
+                                .replace(R.id.frame,FullPhotoFragment().also {
+                                    it.arguments = Bundle().apply {
+                                        putString("url",url)
+                                    }
+                                })
+                                .commit()
                         }
                     }
                 }
