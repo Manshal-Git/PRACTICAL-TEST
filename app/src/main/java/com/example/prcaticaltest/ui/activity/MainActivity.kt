@@ -8,6 +8,7 @@ import com.example.prcaticaltest.databinding.ActivityMainBinding
 import com.example.prcaticaltest.ui.fragment.GalleryFragment
 import com.example.prcaticaltest.ui.fragment.HomeFragment
 import com.example.prcaticaltest.ui.fragment.TodoFragment
+import com.example.prcaticaltest.viewmodel.GalleryViewModel
 import com.example.prcaticaltest.viewmodel.HomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private var galleryFragment: GalleryFragment? = null
     private var todoFragment: TodoFragment? = null
     private val homeViewModel by viewModel<HomeViewModel>()
+    private val galleryViewModel by viewModel<GalleryViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                             R.id.home -> homeFragment ?: HomeFragment.newInstance(homeViewModel).apply {
                                 homeFragment = this
                             }
-                            R.id.gallery -> galleryFragment ?: GalleryFragment.newInstance().apply {
+                            R.id.gallery -> galleryFragment ?: GalleryFragment.newInstance(galleryViewModel).apply {
                                 galleryFragment = this
                             }
                             R.id.todo -> todoFragment ?: TodoFragment.newInstance().apply {

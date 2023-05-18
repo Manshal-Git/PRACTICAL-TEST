@@ -19,11 +19,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var vm: HomeViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        vm.getProducts()
-    }
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

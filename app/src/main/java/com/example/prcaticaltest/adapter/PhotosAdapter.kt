@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.prcaticaltest.databinding.ItemPhotoBinding
 import com.example.prcaticaltest.model.Photo
 
-class PhotosAdapter(private val photos : List<Photo>, val onItemClick : (id : Int) -> Unit) : RecyclerView.Adapter<PhotosAdapter.ProductViewHolder>() {
+class PhotosAdapter(private val photos : List<Photo>, val onItemClick : (url : String) -> Unit) : RecyclerView.Adapter<PhotosAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         return ProductViewHolder(
@@ -23,9 +23,9 @@ class PhotosAdapter(private val photos : List<Photo>, val onItemClick : (id : In
         val photo = photos[position]
         val context = holder.itemView.context
         with(holder){
-            Glide.with(context).load(photo.thumbnailUrl).into(ivProduct)
+            Glide.with(context).load(photo.thumbnailUrl).into(ivPhoto)
             card.setOnClickListener {
-                onItemClick(photo.id)
+                onItemClick(photo.url)
             }
         }
     }
@@ -36,6 +36,6 @@ class PhotosAdapter(private val photos : List<Photo>, val onItemClick : (id : In
 
     inner class ProductViewHolder(binding : ItemPhotoBinding) : RecyclerView.ViewHolder(binding.root) {
         val card = binding.root
-        val ivProduct = binding.ivPhoto
+        val ivPhoto = binding.ivPhoto
     }
 }
