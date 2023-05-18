@@ -18,6 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <FrameLayout
+        android:id="@+id/contentScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvProducts"
             android:layout_width="match_parent"
@@ -35,6 +40,13 @@
             android:background="@color/white"
             android:visibility="gone"
             />
+
+    </FrameLayout>
+
+        <include layout="@layout/loading_screen"
+            android:id="@+id/loadingScreen"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
 
     </FrameLayout>
 

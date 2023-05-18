@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                                             }
                                         })
                                         .commit()
-
+                                    hideBottomNavBar()
                                 }.apply {
                                     homeFragment = this
                                 }
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                                         }
                                     })
                                     .commit()
-                                binding.bottomNavBar.hide()
+                                hideBottomNavBar()
                                 makeFullScreen()
                             }.apply {
                                 galleryFragment = this
@@ -103,6 +103,10 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun hideBottomNavBar() {
+        binding.bottomNavBar.hide()
     }
 
     private fun changeFragment(fragment: Fragment? = null) {

@@ -32,6 +32,8 @@ class GalleryFragment : Fragment() {
         }
         vm.apply {
             if (photos.value == null) {
+                binding.contentScreen.hide()
+                binding.loadingScreen.root.show()
                 getPhotos()
             }
             photos.observe(viewLifecycleOwner) { items ->
@@ -48,6 +50,8 @@ class GalleryFragment : Fragment() {
                             makeFullScreen(url)
                         }
                     }
+                    binding.contentScreen.show()
+                    binding.loadingScreen.root.hide()
                 }
             }
         }

@@ -3,6 +3,7 @@ package com.example.prcaticaltest.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.example.prcaticaltest.databinding.ItemPhotoBinding
 import com.example.prcaticaltest.model.Photo
@@ -23,7 +24,12 @@ class PhotosAdapter(private val photos : List<Photo>, val onItemClick : (url : S
         val photo = photos[position]
         val context = holder.itemView.context
         with(holder){
-            Glide.with(context).load(photo.thumbnailUrl).into(ivPhoto)
+            Glide.with(context).load(photo.thumbnailUrl)
+                .placeholder(CircularProgressDrawable(context).apply {
+                    start()
+                    centerRadius = 16f
+                })
+                .into(ivPhoto)
             card.setOnClickListener {
                 onItemClick(photo.url)
             }

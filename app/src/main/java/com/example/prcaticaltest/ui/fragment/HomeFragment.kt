@@ -33,7 +33,11 @@ class HomeFragment : Fragment() {
             rvProducts.layoutManager = LinearLayoutManager(requireContext())
         }
         vm.apply {
-            if (products.value == null) getProducts()
+            if (products.value == null) {
+                binding.loadingScreen.root.show()
+                binding.contentScreen.hide()
+                getProducts()
+            }
             products.observe(viewLifecycleOwner) { it ->
                 if (it.isEmpty()) {
                     binding.apply {
@@ -49,6 +53,8 @@ class HomeFragment : Fragment() {
                         }
                         layoutManager?.onRestoreInstanceState(scrollPosition.value)
                     }
+                    binding.loadingScreen.root.hide()
+                    binding.contentScreen.show()
                 }
             }
         }

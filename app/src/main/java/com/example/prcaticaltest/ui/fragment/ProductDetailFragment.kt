@@ -28,6 +28,7 @@ class ProductDetailFragment : Fragment() {
         val productId = arguments?.getInt(Constants.KEY_PRODUCT_ID,0)
 
         if (productId != null) {
+            binding.loadingScreen.root.show()
             repository.getProductById(productId){ product ->
                 if(product == null){
                     binding.apply{
@@ -38,6 +39,7 @@ class ProductDetailFragment : Fragment() {
                     binding.apply {
                         tvNoProducts.hide()
                         detailsLayout.show()
+                        binding.loadingScreen.root.hide()
                         Glide.with(this@ProductDetailFragment)
                             .load(product.thumbnail)
                             .into(ivProduct)

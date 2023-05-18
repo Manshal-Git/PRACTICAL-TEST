@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatImageView
-    android:id="@+id/ivFullPicture"
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    >
+
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/ivFullPicture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:scaleType="centerCrop"/>
+
+   <!-- <include layout="@layout/loading_screen"
+        android:id="@+id/loadingScreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/smooth_grey"/>-->
+
+</FrameLayout>
