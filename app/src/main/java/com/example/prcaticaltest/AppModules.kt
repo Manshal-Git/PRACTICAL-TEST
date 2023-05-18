@@ -3,6 +3,7 @@ package com.example.prcaticaltest
 import com.example.prcaticaltest.network.PhotosNetworkCallInterface
 import com.example.prcaticaltest.network.ProductsNetworkCallInterface
 import com.example.prcaticaltest.network.Repository
+import com.example.prcaticaltest.viewmodel.GalleryViewModel
 import com.example.prcaticaltest.viewmodel.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
@@ -42,5 +43,9 @@ val appModule = module {
 
     viewModel {
         HomeViewModel(get())
+    }
+
+    viewModel {
+        GalleryViewModel(get())
     }
 }
