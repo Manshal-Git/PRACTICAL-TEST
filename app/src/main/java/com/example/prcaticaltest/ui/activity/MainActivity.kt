@@ -35,7 +35,17 @@ class MainActivity : AppCompatActivity() {
                             R.id.home -> homeFragment ?: HomeFragment.newInstance(homeViewModel).apply {
                                 homeFragment = this
                             }
-                            R.id.gallery -> galleryFragment ?: GalleryFragment.newInstance(galleryViewModel).apply {
+                            R.id.gallery -> galleryFragment ?: GalleryFragment.newInstance(galleryViewModel){ url ->
+                                    supportFragmentManager
+                                    .beginTransaction()
+                                    .addToBackStack(GalleryFragment::class.java.name)
+                                    .replace(R.id.frame,FullPhotoFragment().also {
+                                        it.arguments = Bundle().apply {
+                                            putString("url",url)
+                                        }
+                                    })
+                                    .commit()
+                            }.apply {
                                 galleryFragment = this
                             }
                             R.id.todo -> todoFragment ?: TodoFragment.newInstance().apply {
