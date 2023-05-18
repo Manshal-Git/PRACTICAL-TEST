@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.prcaticaltest.R
+import com.example.prcaticaltest.adapter.ProductsAdapter
 import com.example.prcaticaltest.databinding.FragmentHomeBinding
+import com.example.prcaticaltest.utils.hide
+import com.example.prcaticaltest.utils.show
 import com.example.prcaticaltest.viewmodel.HomeViewModel
 
 
@@ -15,13 +19,48 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var vm: HomeViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        vm.getProducts()
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.bind(layoutInflater.inflate(R.layout.fragment_home,null,false))
+        binding.apply {
+            toolbar.tvTitle.text = getString(R.string.productlist)
+            rvProducts.layoutManager = LinearLayoutManager(requireContext())
+        }
+        vm.apply {
+            if(products.value==null) getProducts()
+            products.observe(viewLifecycleOwner){
+                if(it.isEmpty()){
+                    binding.apply {
+                        rvProducts.hide()
+                        tvNoProducts.show()
+                    }
+                } else{
+                    binding.tvNoProducts.hide()
+                    binding.rvProducts.apply {
+                        show()
+                        adapter = ProductsAdapter(it){
+                            // Todo : Display details at another Activity or here
+                        }
+                        layoutManager?.onRestoreInstanceState(scrollPosition.value)
+                    }
+                }
+            }
+        }
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        val scrollState = binding.rvProducts.layoutManager?.onSaveInstanceState()
+        scrollState?.let { vm.setScrollPosition(it) }
     }
 
     companion object {

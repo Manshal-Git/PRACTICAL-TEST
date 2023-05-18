@@ -25,7 +25,10 @@ class ProductsAdapter(private val products : List<Product>,val onItemClick : (id
         with(holder){
             Glide.with(context).load(product.thumbnail).into(ivProduct)
             tvTitle.text = product.title
-            tvSubtitle.text = product.description
+            tvSubtitle.text = product.description.let { desc ->
+                if (desc.length > 64) desc.substring(0,56) + "..."
+                else desc
+            }
             card.setOnClickListener {
                 onItemClick(product.id)
             }

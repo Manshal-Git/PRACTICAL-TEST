@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingHorizontal="@dimen/padding_medium"
+    android:padding="@dimen/padding_medium"
     >
 
     <FrameLayout
@@ -19,7 +19,6 @@
         android:theme="@style/BottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/margin_medium"
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_nav_menu"
         app:elevation="4dp"
