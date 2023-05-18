@@ -16,9 +16,9 @@
         android:theme="@style/Theme.PrcaticalTest"
         tools:targetApi="31" >
 
-        <activity android:name=".ui.activity.ProductDetailActivity" android:exported="false"/>
+        <activity android:name=".ui.fragment.ProductDetailFragment" android:exported="false"/>
 
-        <activity android:name=".ui.activity.FullPhotoFragment" android:exported="false"/>
+        <activity android:name=".ui.fragment.FullPhotoFragment" android:exported="false"/>
 
         <activity android:name=".ui.activity.MainActivity"
             android:exported="true">
