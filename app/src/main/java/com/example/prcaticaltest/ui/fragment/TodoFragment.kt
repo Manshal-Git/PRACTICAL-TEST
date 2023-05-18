@@ -20,8 +20,8 @@ class TodoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding =
-            FragmentTodoBinding.bind(layoutInflater.inflate(R.layout.fragment_todo, null, false))
+        binding = FragmentTodoBinding.bind(layoutInflater.inflate(R.layout.fragment_todo, null, false))
+        binding.toolbar.tvTitle.text = getString(R.string.todoCaps)
         return binding.root
     }
 
