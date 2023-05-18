@@ -29,6 +29,7 @@
                     android:id="@+id/ivProduct"
                     android:layout_width="match_parent"
                     android:layout_height="192dp"
+                    android:layout_marginTop="@dimen/margin_medium"
                     android:scaleType="fitXY"
                     app:shapeAppearance="@style/ShapeAppearanceOverlay.Material3.Chip" />
 
@@ -38,6 +39,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/details_title"
                     android:textColor="@color/black"
+                    android:paddingVertical="@dimen/padding_low"
                     />
 
                 <TextView
@@ -46,6 +48,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/subtitle"
                     android:textColor="@color/grey"
+                    android:paddingBottom="@dimen/padding_low"
                     />
 
 
@@ -55,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/subtitle"
                     android:textColor="@color/grey"
+                    android:paddingVertical="@dimen/padding_low"
                     />
 
             </LinearLayout>
