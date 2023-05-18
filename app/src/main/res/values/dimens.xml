@@ -8,5 +8,6 @@
     <dimen name="details_title">16sp</dimen>
     <dimen name="subtitle">14sp</dimen>
     <dimen name="margin_low">8dp</dimen>
+    <dimen name="photoItemSize">108dp</dimen>
 
 </resources>

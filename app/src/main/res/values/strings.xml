@@ -13,5 +13,6 @@ Under development
 </string>
     <string name="productlist">Product List</string>
     <string name="no_products_found">No products found</string>
+    <string name="no_photos_found">No photos found</string>
 
 </resources>

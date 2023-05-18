@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/photoItemSize"
+    android:layout_height="@dimen/photoItemSize"
+    android:layout_marginVertical="@dimen/margin_low"
+    android:layout_marginHorizontal="@dimen/margin_low"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="8dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.Material3.Chip" />
+
+
+</com.google.android.material.card.MaterialCardView>
