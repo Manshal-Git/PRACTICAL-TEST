@@ -8,7 +8,8 @@
     android:layout_marginVertical="@dimen/margin_low"
     android:layout_marginHorizontal="@dimen/margin_low"
     app:cardCornerRadius="10dp"
-    app:cardElevation="8dp">
+    app:cardElevation="8dp"
+    android:theme="@style/balsamiqFonts">
 
     <LinearLayout
         android:layout_width="match_parent"

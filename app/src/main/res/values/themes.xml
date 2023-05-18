@@ -3,7 +3,7 @@
     <style name="Theme.PrcaticalTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <style name="BottomNavigationView" >
+    <style name="balsamiqFonts" >
         <item name="fontFamily">@font/balsamiq_sans_regular</item>
     </style>
 </resources>
