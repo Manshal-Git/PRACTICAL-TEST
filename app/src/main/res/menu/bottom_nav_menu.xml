@@ -3,14 +3,17 @@
 
     <item android:id="@+id/home"
         android:title="@string/home"
+        android:icon="@drawable/home"
         />
 
     <item android:id="@+id/gallery"
         android:title="@string/gallery"
+        android:icon="@drawable/image"
         />
 
     <item android:id="@+id/todo"
         android:title="@string/todo"
+        android:icon="@drawable/list"
         />
 
 </menu>
